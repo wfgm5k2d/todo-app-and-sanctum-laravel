@@ -46,8 +46,9 @@ class TodoController extends Controller
         return redirect('/');
     }
 
-    public function delete(){
-        //
+    public function delete(Todo $todo){
+        $todo->delete();
+        return redirect('/');
     }
 
     public function store(){

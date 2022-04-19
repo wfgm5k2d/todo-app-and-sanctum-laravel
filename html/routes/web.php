@@ -31,7 +31,7 @@ Route::group(['middleware', 'auth:sanctum', 'verified'], function(){
     Route::get('create', [TodoController::class, 'create']);
     Route::get('details/{todo}', [TodoController::class, 'details']);
     Route::get('edit/{todo}', [TodoController::class, 'edit']);
-    Route::get('delete', [TodoController::class, 'delete']);
+    Route::get('delete/{todo}', [TodoController::class, 'delete']);
     Route::get('/user', function(Request $request) {
         return $request->user();
     });
