@@ -85,12 +85,6 @@
             </div>
         @endif
 
-        <nav class="navbar navbar-light bg-light">
-            <div class="container">
-                <a href="/"><span class="navbar-brand mb-0 h1">Мой лист заметок</span></a>
-                <a href="/create"><span class="btn btn-primary">Создать заметку</span></a>
-            </div>
-        </nav>
         <main class="py-4">
             @yield('content')
         </main>

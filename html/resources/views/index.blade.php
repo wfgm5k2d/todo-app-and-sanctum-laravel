@@ -1,8 +1,12 @@
 @extends('layouts.app')
-@section('title')
-    Мой лист заметок
-@endsection
+
 @section('content')
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a href="/"><span class="navbar-brand mb-0 h1">Мой лист заметок</span></a>
+            <a href="/create"><span class="btn btn-primary">Создать заметку</span></a>
+        </div>
+    </nav>
 
     <div class="row mt-3">
         <div class="col-12 align-self-center">
@@ -15,5 +19,4 @@
             </ul>
         </div>
     </div>
-
 @endsection

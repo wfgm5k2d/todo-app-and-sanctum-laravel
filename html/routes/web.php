@@ -15,29 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('/auth/login');
 });
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware', 'auth:sanctum', 'verified'], function(){
-    Route::get('/', function () {
-        return view('index');
-    });
+//    Route::get('/', function () {
+//        return view('index');
+//    });
 
-    Route::get('/user', function(Request $request) {
-        return $request->user();
-    });
-
+    Route::get('/home', [TodoController::class, 'index'])->name('index');
     Route::get('/', [TodoController::class, 'index']);
     Route::get('create', [TodoController::class, 'create']);
     Route::get('details/{todo}', [TodoController::class, 'details']);
     Route::get('edit/{todo}', [TodoController::class, 'edit']);
     Route::get('delete', [TodoController::class, 'delete']);
+    Route::get('/user', function(Request $request) {
+        return $request->user();
+    });
 
     Route::post('update/{todo}', [TodoController::class, 'update']);
     Route::post('store-data', [TodoController::class, 'store']);
 });
-
-Auth::routes();
-
