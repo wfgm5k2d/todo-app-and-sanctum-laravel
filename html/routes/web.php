@@ -31,7 +31,7 @@ Route::group(['middleware', 'auth:sanctum', 'verified'], function(){
 
     Route::get('/', [TodoController::class, 'index']);
     Route::get('create', [TodoController::class, 'create']);
-    Route::get('details', [TodoController::class, 'details']);
+    Route::get('details/{todo}', [TodoController::class, 'details']);
     Route::get('edit', [TodoController::class, 'edit']);
     Route::get('delete', [TodoController::class, 'delete']);
 

@@ -11,10 +11,10 @@
             <b>Информация</b>
         </div>
         <div class="card-body">
-            <h5 class="card-title">Название заметки</h5>
-            <p class="card-text">Описание заметки</p>
-            <a href="edit"><span class="btn btn-primary">Изменить</span></a>
-            <a href="delete"><span class="btn btn-danger">Удалить</span></a>
+            <h5 class="card-title">{{$todos->name}}</h5>
+            <p class="card-text">{{$todos->description}}.</p>
+            <a href="edit/{{$todos->id}}"><span class="btn btn-primary">Изменить</span></a>
+            <a href="delete/{{$todos->id}}"><span class="btn btn-danger">Удалить</span></a>
         </div>
     </div>
 
