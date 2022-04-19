@@ -32,10 +32,10 @@ Route::group(['middleware', 'auth:sanctum', 'verified'], function(){
     Route::get('/', [TodoController::class, 'index']);
     Route::get('create', [TodoController::class, 'create']);
     Route::get('details/{todo}', [TodoController::class, 'details']);
-    Route::get('edit', [TodoController::class, 'edit']);
+    Route::get('edit/{todo}', [TodoController::class, 'edit']);
     Route::get('delete', [TodoController::class, 'delete']);
 
-    Route::post('update', [TodoController::class, 'update']);
+    Route::post('update/{todo}', [TodoController::class, 'update']);
     Route::post('store-data', [TodoController::class, 'store']);
 });
 
