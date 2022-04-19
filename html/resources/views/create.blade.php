@@ -6,7 +6,9 @@
 
 @section('content')
 
-    <form action="" method="post" class="mt-4 p-4">
+    <form action="store-data" method="post" class="mt-4 p-4">
+        @csrf
+        <input type="hidden" name="userId" value="<?=Auth::id()?>">
         <div class="form-group m-3">
             <label for="name">Название</label>
             <input type="text" class="form-control" name="name">

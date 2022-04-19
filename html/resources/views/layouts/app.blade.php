@@ -77,6 +77,14 @@
             </div>
         </nav>
 
+        @if(session()->has('success'))
+            <div class="alert alert-success">
+
+                {{ session()->get('success') }}
+
+            </div>
+        @endif
+
         <nav class="navbar navbar-light bg-light">
             <div class="container">
                 <a href="/"><span class="navbar-brand mb-0 h1">Мой лист заметок</span></a>

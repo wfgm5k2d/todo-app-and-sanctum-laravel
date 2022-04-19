@@ -36,6 +36,7 @@ Route::group(['middleware', 'auth:sanctum', 'verified'], function(){
     Route::get('delete', [TodoController::class, 'delete']);
 
     Route::post('update', [TodoController::class, 'update']);
+    Route::post('store-data', [TodoController::class, 'store']);
 });
 
 Auth::routes();
