@@ -21,11 +21,7 @@ Route::get('/', function () {
     return view('/auth/login');
 });
 
-Route::group(['middleware', 'auth:sanctum', 'verified'], function(){
-//    Route::get('/', function () {
-//        return view('index');
-//    });
-
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
     Route::get('/home', [TodoController::class, 'index'])->name('index');
     Route::get('/', [TodoController::class, 'index']);
     Route::get('create', [TodoController::class, 'create']);
